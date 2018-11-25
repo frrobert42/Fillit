@@ -1,7 +1,8 @@
 NAME	= fillit
 
 PGM		= fillit
-FILES	= main.c check_tetri.c
+FILES	= 	main.c \
+			check_tetri.c
 SRC		= $(FILES)
 OBJ		= $(SRC:srcs/%.c=.obj/%.o)
 
@@ -20,19 +21,61 @@ $(NAME): make_libft $(OBJ)
 	$(CC) -c $< -o $@ $(FLAGS) $(INC)
 
 make_libft:
-	@echo "##  Compilation of libft ##"
-	@make -C libft
+	@echo "                                 "
+	@echo "        \\\||||||////            "
+	@echo "         \\  ~ ~  //             "
+	@echo "         (  8 8  )               "
+	@echo "______ oOOo-(_)-oOOo___________  "
+	@echo "                                 "
+	@echo " Salut tu veut voir ma libft ?   "
+	@echo "                                 "
+	@echo "_____________Oooo._____________  "
+	@echo "   .oooO     (   )               "
+	@echo "    (   )     ) /                "
+	@echo "     \ (     (_/                 "
+	@echo "      \_)                        "
+	@echo "                                 "
+	@echo "                                 "
+	make -C libft
 
 clean:
-	@echo "## remove .obj files     ##"
+	@echo "                                 "
+	@echo "        \\\||||||////            "
+	@echo "         \\  ~ ~  //             "
+	@echo "         (  8 8  )               "
+	@echo "______ oOOo-(_)-oOOo___________  "
+	@echo "                                 "
+	@echo "      remove .obj files          "
+	@echo "                                 "
+	@echo "_____________Oooo._____________  "
+	@echo "   .oooO     (   )               "
+	@echo "    (   )     ) /                "
+	@echo "     \ (     (_/                 "
+	@echo "      \_)                        "
+	@echo "                                 "
+	@echo "                                 "
 	rm -rf .obj
 
 fclean: clean
-	@echo "## remove fillit file    ##"
+	@echo "                                 "
+	@echo "        \\\||||||////            "
+	@echo "         \\  ~ ~  //             "
+	@echo "         (  8 8  )               "
+	@echo "______ oOOo-(_)-oOOo___________  "
+	@echo "                                 "
+	@echo "     remove fillit file          "
+	@echo "                                 "
+	@echo "_____________Oooo._____________  "
+	@echo "   .oooO     (   )               "
+	@echo "    (   )     ) /                "
+	@echo "     \ (     (_/                 "
+	@echo "      \_)                        "
+	@echo "                                 "
+	@echo "                                 "
 	rm -f $(NAME)
 
 re: fclean all
-	@echo "## re                    ##"
+	make -C libft
 
 gdb: make_libft
 	cc -g $(FLAGS) $(SRC) -o $(NAME) $(INC) $(LIB)

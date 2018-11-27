@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fillit.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frrobert <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/27 12:48:41 by frrobert          #+#    #+#             */
+/*   Updated: 2018/11/27 14:32:45 by frrobert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILLIT_H
 # define FILLIT_H
 
@@ -7,31 +19,26 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <stdio.h>
-# include "./libft/libft.h"
+# include "libft/libft.h"
 
 # define BUFF_SIZE 1
 
-typedef struct		matrix matrix;
-struct matrix
+typedef struct s_etris	t_etris;
+struct	s_etris
 {
-	int		x;
-	int		y;
+	unsigned char	letter;
+	unsigned char	x;
+	unsigned char	y;
+	unsigned char	width;
+	unsigned char	height;
+	unsigned char	coord_x[4];
+	unsigned char	coord_y[4];
 };
 
-typedef struct		piece piece;
-struct piece
-{
-	char	letter;
-	matrix	coords[4];
-};
-
-int   check_input(char *argv);
-int   valid_format(int fd);
-int		check_number_tetri(char *line, int i);
-int		valid_tetri_form(char *fourlines, int len);
-int		get_next_line(const int fd, char **line);
-int		valid_format(int fd);
-int		check_carac_length(char *line, int len, int nb_lines);
+int		ft_read(int fd, t_etris *tetris);
+void	min_max(char *m, char *buf);
+t_etris	get_pieces(char *buf, char letter);
+int		check_count(char *buf, int count);
+int		check_connection(char *buf);
 
 #endif
-

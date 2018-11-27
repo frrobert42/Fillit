@@ -2,7 +2,7 @@ NAME	= fillit
 
 PGM		= fillit
 FILES	= 	main.c \
-			check_tetri.c
+			test.c
 SRC		= $(FILES)
 OBJ		= $(SRC:srcs/%.c=.obj/%.o)
 
@@ -10,6 +10,8 @@ INC		= -I includes -I libft/includes
 FLAGS	= -Wall -Wextra -Werror
 LIB		= -L libft -lft
 CC		= gcc
+
+.SILENT:
 
 all: $(NAME)
 
